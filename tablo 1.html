@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UAE Electricity Output by Source</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Load Signika font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;500;700&display=swap" rel="stylesheet">
+
+ <style>
+        @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;500;700&display=swap');
+        body {
+          background-color: #f5f7f6;
+          padding: 20px;
+          font-family: 'Signika', sans-serif;
+          color: #575756;
+          margin: 0;
+        }
+
+        h2 {
+          font-size: 9.5px;
+          margin-bottom: 5.5px;
+        }
+
+        .title-bold { font-weight: 500;}
+        .title-medium { font-weight: 350;}
+        .title-light { font-weight: 180;}
+
+        .chart-container {
+          width: 500px;
+          height: 180;
+        }
+      </style>
+
+      <h2>
+        <span class="title-bold">The UAE's generation capacity,</span>
+        <span class="title-medium">2014-2023</span>
+        <span class="title-light">(MW)</span>
+      </h2>
+
+  <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Signika, sans-serif; font-size: 8.5px; color: #575756;">
+      
+    <table style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr style="background-color: #fff;">
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;"></th>
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2014</th>
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2015</th>
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2016</th>
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2017</th>
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2018</th>
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2019</th>
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2020</th>
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2021</th>
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2022</th>
+          <th style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2023</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background-color: #ebeee3;">
+          <td style="border: 0.6px dotted #969799; text-align: left; padding: 6px;">Solar</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">130</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">132</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">135</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">353</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">600</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1.935</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2.333</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">3.002</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">3.588</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">5.925</td>
+        </tr>
+        <tr style="background-color: #fff;">
+          <td style="border: 0.6px dotted #969799; padding: 6px;">Wind</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">104</td>
+        </tr>
+        <tr style="background-color: #ebeee3;">
+          <td style="border: 0.6px dotted #969799; padding: 6px;">Bioenergy</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">9</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">24</td>
+        </tr>
+        <tr style="background-color: #fff;">
+          <td style="border: 0.6px dotted #969799; padding: 6px;">Nuclear</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">0</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">182</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1.198</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2.294</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">3.686</td>
+        </tr>
+        <tr style="background-color: #ebeee3">
+          <td style="border: 0.6px dotted #969799; padding: 6px;">Total renewables</td>
+          <td style="border: 0.6px dotted #bbb; text-align: right; padding: 6px;">133</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">135</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">136</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">354</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">601</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">1.936</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">2.334</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">3.003</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">3.597</td>
+          <td style="border: 0.6px dotted #969799; text-align: center; padding: 6px;">6.053</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 10px; font-size: 7px; color: #575756; text-align: right">Source: EI Statistical Review 2024, IRENA</div>
+  </div>
+
+
+</body>
+</html>

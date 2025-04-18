@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UAE Electricity Output by Source</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Load Signika font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;500;700&display=swap" rel="stylesheet">
+
+ <style>
+        @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;500;700&display=swap');
+        body {
+          background-color: #ffffff;
+          padding: 5px;
+          font-family: 'Signika', sans-serif;
+          color: #575756;
+margin-bottom: 0px;
+margin-top: 0px;
+        }
+
+        h2 {
+          font-size: 9.5px;
+          margin-bottom: 5.5px;
+		
+        }
+
+        .title-bold { font-weight: 500; }
+        .title-medium { font-weight: 350; }
+        .title-light { font-weight: 180; }
+
+        .chart-container {
+          width: 500px;
+          height: 160;
+        }
+      </style>
+
+      <h2>
+        <span class="title-bold">The UAE’s gross electricity output by source,</span>
+        <span class="title-medium">2019–2023</span>
+        <span class="title-light">(TWh)</span>
+      </h2>
+
+      <div class="chart-container">
+        <canvas id="electricityChart" width="500" height="160"></canvas>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const years = [2019, 2020, 2021, 2022, 2023];
+        const naturalGas = [134.7, 131.1, 133.4, 125.5, 118.9];
+        const nuclearEnergy = [0, 1.6, 10.5, 20.1, 32.3];
+        const renewables = [3.8, 4.6, 5.2, 7.8, 13.8];
+
+        const ctx = document.getElementById('electricityChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: years,
+            datasets: [
+              {
+                label: 'Natural gas',
+                data: naturalGas,
+                backgroundColor: '#43853b'
+              },
+              {
+                label: 'Nuclear energy',
+                data: nuclearEnergy,
+                backgroundColor: '#666866'
+              },
+              {
+                label: 'Renewables',
+                data: renewables,
+                backgroundColor: '#f39c12'
+              }
+            ]
+          },
+          options: {
+            responsive: false,
+            maintainAspectRatio: false,
+            animation: {
+              duration: 2000,
+              easing: 'easeOutQuart',
+              delay: (ctx) => ctx.dataIndex * 200
+            },
+            plugins: {
+              legend: {
+                labels: {
+                  font: {
+                    family: 'Signika',
+		    weight: '300',
+        size: Math.max(7.5, window.innerWidth / 100) // Dynamically adjusts font size
+                  },
+                  color: '#575756'
+                }
+              }
+            },
+            scales: {
+              x: {
+                stacked: true,
+		grid: {
+     		 display: false  // Disables the grid on the x-axis
+    			},
+                ticks: {
+                  font: {
+                    family: 'Signika',
+		    weight: '300',
+        size: Math.max(7.5, window.innerWidth / 100) // Dynamically adjusts font size
+                  },
+                  color: '#575756'
+                }
+              },
+              y: {
+grid: {
+      display: true, // Show the grid
+      borderDash: [1, 4], // Makes the grid lines dotted (2px line, 4px gap)
+      color: '#cccccc' // Optional: soft grey color
+    },
+                stacked: true,
+                beginAtZero: true,
+                ticks: {
+                  font: {
+                    family: 'Signika',
+		    weight: '300',
+        size: Math.max(7.5, window.innerWidth / 100) // Dynamically adjusts font size
+                  },
+                  color: '#575756'
+                }
+              }
+            }
+          }
+        });
+      </script>
+
+
+</body>
+</html>
